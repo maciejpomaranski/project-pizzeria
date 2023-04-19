@@ -92,6 +92,7 @@
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     }
 
     
@@ -163,8 +164,16 @@
           const option = param.options[optionId];
           console.log(optionId, option);
 
+          /*find  image class .paramidID-OptionID*/
+          const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
+          const optionSelected = formData[paramId] && formData[paramId].includes(optionId);
+            
+          /*check if we have image to option*/
+          
+
+
           /* check if there is param with a name of paramId in formData and if it includes optionId */
-          if (formData [paramId] && formData[paramId].includes(optionId)){
+          if (optionSelected){
             /* chceck if the option is not default */
             if(!option.default){
             /* add option price to price variable */
@@ -174,6 +183,15 @@
           } else if (option.default){
             /* reduce price variable */
             price -= option.price;
+          }
+
+          if (optionImage){
+            if (optionSelected){
+              optionImage.classList.add(classNames.menuProduct.imageVisible);
+
+            } else {
+              optionImage.classList.remove(classNames.menuProduct.imageVisible);
+            }
           }
         }
       }
