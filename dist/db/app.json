@@ -204,15 +204,61 @@
   ],
   "orders": [
     {
-      "address": "",
-      "phone": "",
+      "address": "mm",
+      "phone": "55",
       "totalPrice": {
         "0": {},
         "1": {},
-        "innerHTML": 38
+        "innerHTML": 47
       },
-      "subtotalPrice": 18,
-      "totalNumber": 2,
+      "subtotalPrice": 27,
+      "totalNumber": 3,
+      "deliveryFee": 20,
+      "products": [
+        {
+          "id": "cake",
+          "amount": 1,
+          "price": 9,
+          "priceSingle": 9,
+          "name": "Zio Stefano's Doughnut",
+          "params": {}
+        },
+        {
+          "id": "cake",
+          "amount": 1,
+          "price": 9,
+          "priceSingle": 9,
+          "name": "Zio Stefano's Doughnut",
+          "params": {}
+        },
+        {
+          "id": "breakfast",
+          "amount": 1,
+          "price": 9,
+          "priceSingle": 9,
+          "name": "Zia Giulia's Breakfast",
+          "params": {
+            "coffee": {
+              "label": "Coffee type",
+              "options": {
+                "latte": "Latte"
+              }
+            }
+          }
+        }
+      ],
+      "id": 1
+    },
+    {
+      "address": "mmm",
+      "phone": "511093576",
+      "totalPrice": {
+        "0": {},
+        "1": {},
+        "innerHTML": 58
+      },
+      "subtotalPrice": 38,
+      "totalNumber": 3,
       "deliveryFee": 20,
       "products": [
         {
@@ -237,9 +283,40 @@
           "priceSingle": 9,
           "name": "Zio Stefano's Doughnut",
           "params": {}
+        },
+        {
+          "id": "pizza",
+          "amount": 1,
+          "price": 20,
+          "priceSingle": 20,
+          "name": "Nonna Alba's Pizza",
+          "params": {
+            "sauce": {
+              "label": "Sauce",
+              "options": {
+                "tomato": "Tomato"
+              }
+            },
+            "toppings": {
+              "label": "Toppings",
+              "options": {
+                "olives": "Olives",
+                "redPeppers": "Red peppers",
+                "greenPeppers": "Green peppers",
+                "mushrooms": "Mushrooms",
+                "basil": "Fresh basil"
+              }
+            },
+            "crust": {
+              "label": "pizza crust",
+              "options": {
+                "standard": "standard"
+              }
+            }
+          }
         }
       ],
-      "id": 1
+      "id": 2
     }
   ]
 }
