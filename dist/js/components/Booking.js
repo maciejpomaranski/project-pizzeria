@@ -209,7 +209,7 @@ class Booking{
   sentBooking(){
     const thisBooking = this;
 
-    const url =settings.db.url + '/' + settings.db.booking;
+    const url = settings.db.url + '/' + settings.db.bookings;
 
     const payload = {
       date: thisBooking.date,
@@ -266,12 +266,12 @@ class Booking{
       thisBooking.updateDOM();
     });
 
-    thisBooking.dom.wrapper.addEventListener('click', function(){
+    thisBooking.dom.wrapper.addEventListener('click', function(event){
       thisBooking.initTables(event.target);
     });
 
     thisBooking.dom.form.addEventListener('submit', function(event){
-      event.default();
+      event.preventDefault();
       thisBooking.sentBooking();
     });
   }
