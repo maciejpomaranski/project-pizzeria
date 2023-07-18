@@ -94,22 +94,21 @@ class Booking{
     thisBooking.updateDOM();
   }
 
-  makeBooked(date, hour, duration, table){
+  makeBooked(date, hour, duration, table) {
     const thisBooking = this;
-
-    if(thisBooking.booked[date] == 'undefined'){
-      thisBooking.booked[date] = {};
-    }
-
     const startHour = utils.hourToNumber(hour);
 
-    for(let hourBlock = startHour; hourBlock < startHour + duration; hourBlock += 0.5){
+    for (let hourBlock = startHour; hourBlock < startHour + duration; hourBlock += 0.5) {
+      if (typeof thisBooking.booked[date] == 'undefined') {
+        thisBooking.booked[date] = {};
+      }
 
-      if(thisBooking.booked[date][hourBlock] == 'undefined'){
+      if (typeof thisBooking.booked[date][hourBlock] == 'undefined') {
         thisBooking.booked[date][hourBlock] = [];
       }
-  
+
       thisBooking.booked[date][hourBlock].push(table);
+      console.log(thisBooking.booked[date][hourBlock]);
     }
   }
 
@@ -270,7 +269,7 @@ class Booking{
       thisBooking.initTables(event.target);
     });
 
-    thisBooking.dom.form.addEventListener('submit', function(event){
+    thisBooking.dom.form.addEventListener('click', function(event){
       event.preventDefault();
       thisBooking.sentBooking();
     });

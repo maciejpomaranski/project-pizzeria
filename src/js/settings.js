@@ -49,7 +49,7 @@ export const select = {
     starters: 'input[type="checkbox"]',
     phone: 'input[name="phone"]',
     address: 'input[name="address"]',
-    bookingSubmit: 'button[name="submit"]',
+    bookingSubmit: 'button[type="submit"]',
   },
   nav: {
     links: '.main-nav a',
