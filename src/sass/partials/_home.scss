@@ -1,3 +1,11 @@
+.home-wrapper {
+  margin: ($base-size * 3.5) auto;
+  padding: ($base-size * 6) ($base-size * 4);
+  background: $color-light;
+  border-bottom: 1px solid lighten($color-dark, 70%);
+  border-radius: $radius;
+}
+
 .navigation {
   color: $color-light;
 
@@ -7,12 +15,78 @@
     object-fit: cover;
   }
 }
-  
+
 .opening-hour {
   height: 120px;
   background-color: $color-main;
 }
 
-.home-header {
-  background-color: $color-light;
+.navigation .row .card .card-body {
+  .box-header {
+    font-family: $font-header;
+    font-size: ($base-size * 2);
+    font-weight: $font-bold;
+    color: $color-light;
+    margin: 0;
+  }
+
+  .hours {
+    font-family: $font-text;
+    font-size: ($base-size * 1.2);
+    font-weight: $font-light;
+    text-align: center;
+  }
+
+  .move {
+    transition: 0.5s;
+  }
+
+  .move:hover {
+    transform: translate(0, -10px);
+  }
+}
+
+.opinions .row .opinion {
+  font-family: $font-text;
+  font-size: ($base-size * 1,2);
+
+  .opinion-title {
+    font-weight: $font-bold;
+  }
+  
+  .opinion-author {
+    font-style: italic;
+  }
+}
+.gallery {
+  img {
+    height: 200px;
+  }
+
+  .icons {
+    color: $color-light;
+    font-size: 0;
+    transition: 1s;
+
+    i {
+      padding: 5px;
+    }
+  }
+}
+
+.gallery .card:hover {
+  .icons {
+    color: $color-main;
+    font-size: ($base-size * 2);
+  }
+
+  img {
+    filter: brightness(50%);
+  }
+}
+
+.instagram a {
+  color: $color-main;
+  font-family: $font-text;
+  font-size: ($base-size * 1.2);
 }
